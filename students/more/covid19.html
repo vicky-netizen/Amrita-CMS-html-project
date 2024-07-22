@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<title>Jaideep P - CMS</title>
+<style>
+body{
+	color:black;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image:url("https://d.newsweek.com/en/full/294255/serene-campus.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.navbar {
+  overflow: hidden;
+  animation: fadeIn 2s ease-in;
+  width:70%;
+}
+
+.navbar .home{
+	margin-left:auto;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover:not(.no-hover){
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn2 {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.dropdown-content input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+table{
+	border:1px solid grey;
+	animation:fadeInRight 1s ease-in-out;
+	border-collapse:collapse;
+	background-color:white;
+	opacity:0.8;
+	width:100%
+}
+td{
+	border:1px solid grey;
+	padding:20px;
+}
+
+.dochead{
+	border-top:1px solid grey;
+	border-bottom:1px solid grey;
+	color:grey;
+	
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.dropbtn {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3c424d;
+}
+
+.editcol {
+  position: relative;
+  display: inline-block;
+}
+
+.editcol-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.editcol-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.editcol a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.dropbtn1 {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-column.hidden {
+  display: none;
+}
+
+ #file-details::placeholder {
+    font-size: 17px; /* Adjust the font size as needed */
+  }
+
+  #file-title::placeholder {
+    font-size: 17px; /* Adjust the font size as needed */
+  }
+</style>
+</head>
+<body>
+<h1>Jaideep P</h1>
+<h2>CB.EN.U4CSE22563</h2>
+<div class="navbar">
+	<a href="C:\Users\Jaideep\Desktop\html project\students\students.html">Personal Details</a>
+	<a href="C:\Users\Jaideep\Desktop\html project\students\academic history.html">Academic History</a>
+	<a href="C:\Users\Jaideep\Desktop\html project\students\parents and guardians.html">Parents & Guardians</a>
+	<a href="C:\Users\Jaideep\Desktop\html project\students\Other documents.html">Documents</a>
+	<div class="dropdown">
+    		<button class="dropbtn2" style="background-color: #f2f2f2;">more 
+      		<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+      		<a href="C:\Users\Jaideep\Desktop\html project\students\more\fee payments.html">Fee Payments</a>
+		<a href="C:\Users\Jaideep\Desktop\html project\students\more\acheivements.html">Achievements</a>
+		<a href="C:\Users\Jaideep\Desktop\html project\students\more\competitive exams.html">Competitive Exams</a>
+		<a href="#" style="background-color: #f2f2f2;">COVID-19 Vccinations</a>
+		<a href="C:\Users\Jaideep\Desktop\html project\students\more\antiragging undertaking.html">Antiragging Undertaking</a>
+    		</div>
+  	</div>
+	<a style="float: right; line-height: 5px; margin-top: 5px;" class="home" href="C:\Users\Jaideep\Desktop\html project\project.html"><img src="C:\Users\Jaideep\Desktop\html project\images\home logo.png" width="20" height="20" style="vertical-align: middle;">Home</a>
+</div>
+<div class="dochead">
+  <h1 style="display: flex; justify-content: space-between; align-items: center;">
+    <span id="no-documents-message" style="text-align: left;">No vaccination details found</span>
+    <form id="upload-form" style="text-align: right;">
+    <label for="file-title" style="width: 200px; height: 20px; font-size: 17px;color:white">Vaccine:</label>
+    <select id="file-title" required style="width: 200px;height:20px;font-size: 17px;"">
+      <option value="" disabled selected>Vaccine</option>
+      <option value="Covaxin">Covaxin</option>
+      <option value="Covishield">Covishield</option>
+      <option value="Abdala">Abdala</option>
+      <option value="AstraZeneca">AstraZeneca</option>
+      <option value="CanSinoBIO">CanSinoBIO</option>
+      <option value="Clover Biopharmaceuticals">Clover Biopharmaceuticals</option>
+      <option value="EpiVacCorona">EpiVacCorona</option>
+      <option value="IMBCAMS">IMBCAMS</option>
+      <option value="Janssen">Janssen</option>
+      <option value="Moderna">Moderna</option>
+      <option value="Novavax">Novavax</option>
+      <option value="Pfizer">Pfizer</option>
+      <option value="Sanofi Pasteur">Sanofi Pasteur</option>
+      <option value="Sinopharm">Sinopharm</option>
+      <option value="Sinovac">Sinovac</option>
+      <option value="Soberana">Soberana</option>
+      <option value="Sputnik V">Sputnik V</option>
+      <option value="UREVAC">UREVAC</option> 
+      <option value="Zhifei Longcom">Zhifei Longcom</option>     
+    </select>
+    <label for="vaccdate" style="width: 200px; height: 20px; font-size: 17px;color:white">Vaccination Date:</label>
+    <input type="date" id="vaccdate" placeholder="Vaccination Date" required style="width: 200px;height:20px;font-size: 17px;"">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<br>
+    <label for="file-details" style="width: 200px; height: 20px; font-size: 17px;color:white">Dose:</label>
+    <select id="file-details" required style="width: 200px;height:20px;font-size: 17px;"">
+      <option value="" disabled selected>Dose</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <label for="benfid" style="width: 200px; height: 20px; font-size: 17px;color:white">Beneficiary Id:</label>
+    <input type="text" id="benfid" required placeholder="Beneficiary Id" style="width: 200px;height:20px;font-size: 17px;"">
+      <label for="file-upload" class="button">Add data</label>
+      <input id="file-upload" hidden="hidden" type="file" class="file-upload" accept=".pdf,.doc,.docx,.txt">
+    </form>
+  </h1>
+</div>
+<br>
+<div class="editcol">
+  <button onclick="toggleDropdown()" class="dropbtn">Edit Columns⮟</button>
+  <div id="dropdown" class="dropdown-content">
+    <label><input type="checkbox" checked onchange="toggleColumn('vaccination date')">Vaccination Date</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('vaccine')">Vaccine</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('dose')">Dose</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('beneficiary id')">Beneficiary Id</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('verified')">Verified ?</label>
+  </div>
+</div>
+<form style="text-align: right;color:white;">
+Search
+<input type="text" name="search" value="" placeholder="Enter vaccine name">
+</form>
+</h4>
+<br>
+<table id="document-table">
+  <tr>
+    <td>S.no</td>
+    <td class="vaccination date">Vaccination Date</td>
+    <td class="vaccine">Vaccine</td>
+    <td class="dose">Dose</td>
+    <td class="beneficiary id">Beneficiary Id</td>
+    <td class="verified">Verified ?</td>
+    <td>Action</td>
+  </tr>
+</table>
+<br>
+<h4 style="color:white;"><b>Note: If your vaccine name is not found in the list please inform us with details at cmshelp@cb.amrita.edu</b></h4>
+</body>
+</html>
+<script>
+// Function to handle clicks outside of dropdown menu
+window.addEventListener('click', function(event) {
+  var dropdowns = document.getElementsByClassName("editcol-content");
+
+  // Check if the clicked element is a dropdown button
+  var clickedDropdown = event.target.closest('.dropbtn');
+
+  // Hide dropdown menus if the clicked element is not a dropdown button
+  if (!clickedDropdown) {
+    for (var i = 0; i < dropdowns.length; i++) {
+      var dropdown = dropdowns[i];
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+      }
+    }
+  }
+  else {
+    event.stopPropagation(); // Prevent the event from propagating to the window
+  }
+});
+
+
+// JavaScript code
+
+
+function loadTableData() {
+  // Retrieve table data from localStorage
+  const storedData = localStorage.getItem("tableData");
+
+  if (storedData) {
+    tableData = JSON.parse(storedData);
+
+    const table = document.getElementById("document-table");
+    table.innerHTML = ""; // Clear existing table rows
+
+    for (let i = 0; i < tableData.length; i++) {
+      const document = tableData[i];
+      const row = createTableRow(document, i + 1);
+      table.appendChild(row);
+    }
+  }
+}
+
+const tableData = [];
+let documentCount = 0;
+
+document.getElementById("file-upload").addEventListener("change", handleFileUpload);
+
+function handleFileUpload(event) {
+  const file = event.target.files[0];
+  const vaccine = document.getElementById("file-title").value;
+  const dose = document.getElementById("file-details").value;
+  const vaccdate = document.getElementById("vaccdate").value;
+  const benfid = document.getElementById("benfid").value;
+
+  // Validate input fields
+  if (!file || !vaccine || !dose || !vaccdate || !benfid) {
+    alert("Please enter all the details");
+    return;
+  }
+
+  // Generate a new row for the table
+  const row = document.createElement("tr");
+  const sNoCell = document.createElement("td");
+  const vaccdateCell = document.createElement("td");
+  const vaccineCell = document.createElement("td");
+  const doseCell = document.createElement("td");
+  const benfidCell = document.createElement("td");
+  const verifiedCell = document.createElement("td");
+  const actionCell = document.createElement("td");
+
+  // Set the text content of the cells
+  documentCount++;
+  sNoCell.textContent = documentCount;
+  vaccdateCell.textContent = vaccdate;
+  vaccdateCell.classList.add("vaccination-date"); // Fixed typo here
+  vaccineCell.textContent = vaccine;
+  vaccineCell.classList.add("vaccine");
+  doseCell.textContent = dose;
+  doseCell.classList.add("dose");
+  benfidCell.textContent = benfid;
+  benfidCell.classList.add("beneficiary-id"); // Updated class name here
+  verifiedCell.textContent = "yes";
+  verifiedCell.classList.add("verified");
+  actionCell.innerHTML = '<button class="button" onclick="deleteRow(this)">Delete</button>';
+
+  // Append cells to the row
+  row.appendChild(sNoCell);
+  row.appendChild(vaccdateCell);
+  row.appendChild(vaccineCell);
+  row.appendChild(doseCell);
+  row.appendChild(benfidCell);
+  row.appendChild(verifiedCell);
+  row.appendChild(actionCell);
+
+  // Append the row to the table
+  const table = document.getElementById("document-table");
+  table.appendChild(row);
+
+  const newDocument = {
+    vaccdate: vaccdate,
+    vaccine: vaccine,
+    dose: dose,
+    benfid: benfid
+  };
+  newDocument.verified = "yes";
+  tableData.push(newDocument);
+
+  // Save table data to localStorage
+  saveTableData();
+
+  // Clear the file input and input fields
+  event.target.value = "";
+  document.getElementById("file-title").value = "";
+  document.getElementById("file-details").value = "";
+  document.getElementById("vaccdate").value = "";
+  document.getElementById("benfid").value = "";
+
+  // Hide the "No documents found" message if table has any rows
+  const noDocumentsMessage = document.getElementById("no-documents-message");
+  noDocumentsMessage.style.display = table.rows.length > 1 ? "none" : "block";
+}
+
+function saveTableData() {
+  // Save table data to localStorage
+  localStorage.setItem("tableData", JSON.stringify(tableData));
+}
+
+function deleteRow(button) {
+  const row = button.closest("tr");
+  row.remove();
+
+  const table = document.getElementById("document-table");
+
+  const rowIndex = Array.from(table.rows).indexOf(row) - 1;
+  tableData.splice(rowIndex, 1);
+
+  // Display the "No documents found" message if table becomes empty
+  const noDocumentsMessage = document.getElementById("no-documents-message");
+  noDocumentsMessage.style.display = table.rows.length === 1 ? "block" : "none";
+}
+
+// Function to toggle the visibility of a specific table column
+function toggleColumn(className) {
+  var columns = document.getElementsByClassName(className);
+
+  for (var i = 0; i < columns.length; i++) {
+    var column = columns[i];
+    column.style.display = column.style.display === "none" ? "table-cell" : "none";
+  }
+}
+
+// Function to toggle the visibility of the dropdown menu
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdown = document.getElementById("dropdown");
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+    }
+  }
+};
+
+function searchTable() {
+      const searchInput = document.querySelector('input[name="search"]');
+      const searchTitle = searchInput.value.trim().toLowerCase();
+
+      const table = document.getElementById("document-table");
+      const rows = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < rows.length; i++) {
+        const titleCell = rows[i].querySelector(".vaccine");
+        const title = titleCell.textContent.toLowerCase();
+
+        if (title.includes(searchTitle)) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
+      }
+    }
+
+    // Attach event listener to the search input
+    document.querySelector('input[name="search"]').addEventListener("input", searchTable);
+  
+</script>

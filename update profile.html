@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile Update - CMS</title>
+<style>
+body {
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url("https://d.newsweek.com/en/full/294255/serene-campus.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.button {
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+table {
+	border: 1px solid grey;
+	animation: fadeInRight 1s ease-in-out;
+	border-collapse: collapse;
+	background-color: white;
+	opacity: 0.8;
+	width: 70%;
+}
+
+td {
+	border: 1px solid grey;
+	padding: 20px;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.8;
+	}
+}
+
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translateX(300px);
+	}
+	to {
+		opacity: 0.8;
+	}
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+	width: 70%;
+}
+
+.container .button {
+	margin: 0;
+}
+</style>
+</head>
+<body>
+
+<h1 style="animation: fadeIn 1s ease-in;">PROFILE UPDATE</h1>
+
+<table id="profileTable">
+  <tr>
+    <td><b>Roll No.</b></td>
+    <td id="rollNo">CB.EN.U4CSE22563</td>
+  </tr>
+  <tr>
+    <td><b>Name</b></td>
+    <td id="name">Jaideep P</td>
+  </tr>
+  <tr>
+    <td><b>Mobile</b></td>
+    <td id="mobile">9597250060</td>
+  </tr>
+  <tr>
+    <td><b>Personal Email</b></td>
+    <td id="email">jaideepp15@gmail.com</td>
+  </tr>
+  <tr>
+    <td><b>M.A.C. IDs</b></td>
+    <td>No M.A.C. IDs found</td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Your Bank Account Details:</b></td>
+  </tr>
+  <tr>
+    <td><b>Account holder name</b></td>
+    <td id="accHolderName">&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><b>Bank name</b></td>
+    <td id="bankName">&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><b>Branch name</b></td>
+    <td id="branchName">&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><b>Account number</b></td>
+    <td id="accNumber">&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td><b>IFS code</b></td>
+    <td id="ifsCode">&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+</table>
+<div class="container">
+	<button class="button" onclick="editProfile()">Edit Profile</button>
+	<button class="button" onclick="openNewPage()">Go to Home</button>
+</div>
+
+<script>
+
+function editProfile() {
+  var cells = document.querySelectorAll("#profileTable td:nth-child(2)");
+  cells.forEach(function(cell) {
+    cell.setAttribute("contenteditable", "true");
+  });
+}
+
+function openNewPage() {
+  window.open("file:///C:/Users/Jaideep/Desktop/html%20project/project.html", "_self");
+}
+
+</script>
+</body>
+</html>

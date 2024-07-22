@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jaideep P - CMS</title>
+<style>
+body{
+	color:black;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image:url("https://d.newsweek.com/en/full/294255/serene-campus.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.navbar {
+  overflow: hidden;
+  animation: fadeIn 2s ease-in;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover:not(.no-hover){
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@keyframes fadeIn {  
+   from {  
+       opacity:0;  
+   }  
+
+   to {  
+       opacity:0.8;  
+   }  
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column-left {
+  float: left;
+  width: 40%;
+  box-sizing: border-box;
+}
+
+.column-right {
+  float: right;
+  width: 50%;
+  box-sizing: border-box;
+  
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#imgdiv
+{
+   float:right;
+   animation:fadeIn 1s ease-in;
+}
+#datadiv
+{
+   float:left;
+   width:75%;
+}
+#container
+{
+   display: inline-block;
+   width:95%;
+}
+
+table{
+	border:1px solid grey;
+	animation:fadeInRight 1s ease-in-out;
+	border-collapse:collapse;
+	background-color:white;
+	opacity:0.8;
+}
+td{
+	border:1px solid grey;
+	padding:10px;
+}
+</style>
+</head>
+<body>
+<h1 style="animation: fadeIn 1s ease-in;">Jaideep P</h1>
+<h2 style="animation: fadeIn 1s ease-in;">CB.EN.U4CSE22563</h2>
+<div class="navbar">
+	<a style="background-color: #f2f2f2;" href="#">Personal Details</a>
+	<a href="C:\Users\Jaideep\Desktop\html project\students\academic history.html">Academic History</a>
+	<a href="#">Parents & Guardians</a>
+	<a href="#">Other Documents</a>
+	<div class="dropdown">
+    		<button class="dropbtn">more 
+      		<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+      		<a href="#">Documents</a>
+      		<a href="#">Fee Payments</a>
+		<a href="#">Achievements</a>
+		<a href="#">Competitive Exams</a>
+		<a href="#">COVID-19 Vccinations</a>
+		<a href="#">Antiragging Undertaking</a>
+    		</div>
+  	</div>
+	<a href="C:\Users\Jaideep\Desktop\html project\project.html">Home</a>
+</div>
+<div id="container">
+   <div id="datadiv">
+<table style="width:100%;">
+<tr>
+	<td><b>Admitted Campus</b></td>
+	<td>Coimbatore(Non-Scholarship)</td>
+</tr>
+<tr>
+	<td><b>Academic Program</b></td>
+	<td>B.Tech</td>
+</tr>
+<tr>
+	<td><b>Admitted Branch</b></td>
+	<td>Computer Science and Engineering</td>
+</tr>
+<tr>
+	<td><b>Section</b></td>
+	<td>F</td>
+</tr>
+<tr>
+	<td><b>Class Advisor</b></td>
+	<td>SABRISH B.A</td>
+</tr>
+<tr>
+	<td><b>Joining Year</b></td>
+	<td>2022</td>
+</tr>
+<tr>
+	<td><b>Gender</b></td>
+	<td>Male</td>
+</tr>
+<tr>
+	<td><b>Date of birth</b></td>
+	<td>Nov 15,2004</td>
+</tr>
+<tr>
+	<td><b>Blood Group</b></td>
+	<td>B+</td>
+</tr>
+<tr>
+	<td><b>Qualifying Exam State</b></td>
+	<td>N/A</td>
+</tr>
+</table>
+</div>
+   <div id="imgdiv">
+      <h4 style="color:white">
+      <img id="myImg" src="C:\Users\Jaideep\Desktop\html project\images\profile pic logo.png" width="200px">
+<form action="/action_page.php"><br>
+  Change Photo<br>
+  <input id="fileInput" style="opacity:0.9;" type="file" id="myFile" name="filename"><br><br>
+  <button hidden="hidden" style="opacity:0.9;" id="myButton">Upload Photo</button>
+</h4>
+</form>
+   </div>
+</div>
+<br>
+<br>
+<div class="row">
+<div class="column-left">
+<table style="width:100%;">
+<tr>
+	<td><b>Is Campus Transfer?</b></td>
+	<td>No</td>
+</tr>
+<tr>
+	<td><b>Resident</b></td>
+	<td>No</td>
+</tr>
+<tr>
+	<td><b>Mobile</b></td>
+	<td>9597250060</td>
+</tr>
+<tr>
+	<td><b>Email</b></td>
+	<td>jaideepp15@gmail.com</td>
+</tr>
+<tr>
+	<td><b>Nationality</b></td>
+	<td>Indian</td>
+</tr>
+<tr>
+	<td><b>Community</b></td>
+	<td>N/A</td>
+</tr>
+<tr>
+	<td><b>Mother Tongue</b></td>
+	<tdTamil</td>
+</tr>
+<tr>
+	<td><b>Communication Address</b></td>
+	<td>N/A</td>
+</tr>
+<tr>
+	<td><b>Permanent Address</b></td>
+	<td>Same as communication address</td>
+</tr>
+</table>
+<br>
+<table style="width:100%;">
+<tr>
+<td colspan="2"><b>Primary Contact - Father</b></td>
+</tr>
+<tr>
+<td><b>Name</b></td>
+<td>Palaniselvan</td>
+</tr>
+<tr>
+<td><b>Mobile</b></td>
+<td>99625 10909</td>
+</tr>
+<tr>
+<td><b>Email</b></td>
+<td>somaselvan@gmail.com</td>
+</tr>
+</table>
+<br>
+<table style="width:100%;">
+<tr>
+<td><b>Total Passes taken During Hostel Days</b></td>
+<td>0 Days</td>
+</tr>
+</table>
+</div>
+<div class="column-right">
+<table style="width:50%;">
+<tr>
+<td><b>Current Semester</b></td>
+<td>2</td>
+</tr>
+<tr>
+<td><b>CGPA</b></td>
+<td>9.15</td>
+</tr>
+<tr>
+<td><b>SGPA(Semester 1)</b></td>
+<td>9.15</td>
+</tr>
+<tr>
+<td><b>Current Arrears</b></td>
+<td>0</td>
+</tr>
+<tr>
+<td><b>Arrear History</b></td>
+<td>0</td>
+</tr>
+</table>
+<br>
+<br>
+<table style="width:50%;">
+<tr>
+<td><b>Active Disciplinary Action</b></td>
+<td>No</td>
+</tr>
+<tr>
+<td><b>Total Disciplinary Actions</b></td>
+<td>0</td>
+</tr>
+</table>
+<br>
+<br>
+<table style="width:50%;">
+<tr>
+<td><b>Active Fee Scholarship</b></td>
+<td>No</td>
+</tr>
+<tr>
+<td><b>Total Fee Scholarships</b></td>
+<td>0</td>
+</tr>
+</table>
+<br>
+<br>
+<table style="width:50%;">
+<tr>
+<td><b>Active Dues</b></td>
+<td>0</td>
+</tr>
+<tr>
+<td><b>Total Dues</b></td>
+<td>0</td>
+</tr>
+</table>
+</div>
+</div>
+</body>
+</html>
+
+<script>
+const myImg = document.getElementById("myImg");
+const myButton = document.getElementById("myButton");
+const fileInput = document.getElementById("fileInput");
+
+myButton.addEventListener("click", function() {
+  fileInput.click();
+});
+
+fileInput.addEventListener("change", function(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.addEventListener("load", function() {
+      myImg.src = reader.result;
+    });
+    reader.readAsDataURL(file);
+  }
+});
+</script>

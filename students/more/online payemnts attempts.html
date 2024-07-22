@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<title>Jaideep P - CMS</title>
+<style>
+body{
+	color:black;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image:url("https://d.newsweek.com/en/full/294255/serene-campus.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.navbar {
+  overflow: hidden;
+  animation: fadeIn 2s ease-in;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover:not(.no-hover){
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn2 {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.dropdown-content input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table{
+	border:1px solid grey;
+	animation:fadeInRight 1s ease-in-out;
+	border-collapse:collapse;
+	background-color:white;
+	opacity:0.8;
+	width:100%
+	display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+}
+td{
+	border:1px solid grey;
+	padding:20px;
+}
+
+.dochead{
+	border-top:1px solid grey;
+	border-bottom:1px solid grey;
+	color:grey;
+	
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.dropbtn {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3c424d;
+}
+
+.editcol {
+  position: relative;
+  display: inline-block;
+}
+
+.editcol-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.editcol-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.editcol a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.dropbtn1 {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle-column.hidden {
+  display: none;
+}
+
+ #file-details::placeholder {
+    font-size: 17px; /* Adjust the font size as needed */
+  }
+
+  #file-title::placeholder {
+    font-size: 17px; /* Adjust the font size as needed */
+  }
+</style>
+</head>
+<body>
+<h1>Jaideep P</h1>
+<h2>CB.EN.U4CSE22563</h2>
+<div class="navbar">
+	<a href="C:\Users\Jaideep\Desktop\html project\students\students.html">Personal Details</a>
+	<a href="C:\Users\Jaideep\Desktop\html project\students\academic history.html">Academic History</a>
+	<a href="C:\Users\Jaideep\Desktop\html project\students\parents and guardians.html">Parents & Guardians</a>
+	<a href="C:\Users\Jaideep\Desktop\html project\students\students.html">Documents</a>
+	<div class="dropdown">
+    		<button class="dropbtn2" style="background-color: #f2f2f2;">more 
+      		<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+      		<a href="#">Fee Payments</a>
+		<a href="#" style="background-color: #f2f2f2;">Achievements</a>
+		<a href="C:\Users\Jaideep\Desktop\html project\students\more\competitive exams.html">Competitive Exams</a>
+		<a href="C:\Users\Jaideep\Desktop\html project\students\more\covid19.html">COVID-19 Vccinations</a>
+		<a href="C:\Users\Jaideep\Desktop\html project\students\more\antiragging undertaking.html">Antiragging Undertaking</a>
+    		</div>
+  	</div>
+	<a href="C:\Users\Jaideep\Desktop\html project\project.html">Home</a>
+</div>
+<div class="dochead">
+  <h1 style="display: flex; justify-content: space-between; align-items: center;">
+    <span id="no-documents-message" style="text-align: left;">Online Payment Attempts</span>
+  </h1>
+</div>
+<br>
+<div class="editcol">
+  <button class="button" onclick="openNewPage()">Go Back</button>
+  <br>
+  <br>
+  <button onclick="toggleDropdown()" class="dropbtn">Edit Columns⮟</button>
+  <div id="dropdown" class="dropdown-content">
+    <label><input type="checkbox" checked onchange="toggleColumn('traninitial')">Tran. Initiated Date</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('amritarefid')">Amrita Ref. ID</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('transtatus')">Tran. Status</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('tutitionfee')">Tuition Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('arrearfee')">Arrear Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('cautiondep')">Caution Deposit</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('hostelcautiondep')">Hostel Caution Deposit</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('hostelrent')">Hostel Rent</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('messfee')">Mess Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('busfee')">Bus Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('counsellingfee')">Counselling Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('regfee')">Registration Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('remedialfee')">Remedial Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('fine')">Fine</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('specialfee')">Special Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('otherfee')">Other Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('idfee')">ID Card Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('tranamount')">Tran. Amount</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('servicetax')">Service Tax</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('processingfee')">Processing Fee</label>
+    <label><input type="checkbox" checked onchange="toggleColumn('foranokha')">For Anokha</label>
+  </div>
+</div>
+<form style="text-align: right;color:white;">
+Search
+<input type="text" name="search" value="" placeholder="Enter Amrita Ref. ID">
+</form>
+</h4>
+<br>
+<div class="table-wrapper">
+<table id="document-table">
+  <tr>
+    <td>S.no</td>
+    <td class="traninitial">Tran. Initiated Date</td>
+    <td class="amritarefid">Amrita Ref. ID</td>
+    <td class="transtatus">Tran. Status</td>
+    <td class="tuitionfee">Tuition Fee</td>
+    <td class="arrearfee">Arrear Fee</td>
+    <td class="cautiondep">Caution Deposit</td>
+    <td class="hostelcautiondep">Hostel Caution Deposit</td>
+    <td class="hostelrent">Hostel Rent</td>
+    <td class="messfee">Mess Fee</td>
+    <td class="busfee">Bus Fee</td>
+    <td class="counsellingfee">Counselling Fee</td>
+    <td class="regfee">Registration Fee</td>
+    <td class="remedialfee">Remedial Fee</td>
+    <td class="fine">Fine</td>
+    <td class="specialfee">Special Fee</td>
+    <td class="otherfee">Other Fee</td>
+    <td class="idfee">ID Card Fee</td>
+    <td class="tranamount">Tran. Amount</td>
+    <td class="servicetax">Service Tax</td>
+    <td class="processingfee">Processing Fee</td>
+    <td class="foranokha">For Anokha</td>
+    <td>Total Amount</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td class="traninitial">Apr 19,2023</td>
+    <td class="amritarefid">CBENU4CSE22563-23-406</td>
+    <td class="transtatus">Success</td>
+    <td class="tuitionfee">0.0</td>
+    <td class="arrearfee">0.0</td>
+    <td class="cautiondep">0.0</td>
+    <td class="hostelcautiondep">0.0</td>
+    <td class="hostelrent">0.0</td>
+    <td class="messfee">0.0</td>
+    <td class="busfee">0.0</td>
+    <td class="counsellingfee">0.0</td>
+    <td class="regfee">0.0</td>
+    <td class="remedialfee">0.0</td>
+    <td class="fine">0.0</td>
+    <td class="specialfee">0.0</td>
+    <td class="otherfee">0.0</td>
+    <td class="idfee">0.0</td>
+    <td class="tranamount">0.0</td>
+    <td class="servicetax">0.0</td>
+    <td class="processingfee">0.0</td>
+    <td class="foranokha">600.00</td>
+    <td>600.00</td>
+  </tr>
+</table>
+</div>
+</body>
+</html>
+<script>
+// Function to handle clicks outside of dropdown menu
+window.addEventListener('click', function(event) {
+  var dropdowns = document.getElementsByClassName("editcol-content");
+
+  // Check if the clicked element is a dropdown button
+  var clickedDropdown = event.target.closest('.dropbtn');
+
+  // Hide dropdown menus if the clicked element is not a dropdown button
+  if (!clickedDropdown) {
+    for (var i = 0; i < dropdowns.length; i++) {
+      var dropdown = dropdowns[i];
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+      }
+    }
+  }
+  else {
+    event.stopPropagation(); // Prevent the event from propagating to the window
+  }
+});
+
+
+// JavaScript code
+let tableData = [];
+
+function loadTableData() {
+  // Retrieve table data from localStorage
+  const storedData = localStorage.getItem("tableData");
+
+  if (storedData) {
+    tableData = JSON.parse(storedData);
+
+    const table = document.getElementById("document-table");
+    table.innerHTML = ""; // Clear existing table rows
+
+    for (let i = 0; i < tableData.length; i++) {
+      const document = tableData[i];
+      const row = createTableRow(document, i + 1);
+      table.appendChild(row);
+    }
+  }
+}
+
+function saveTableData() {
+  // Save table data to localStorage
+  localStorage.setItem("tableData", JSON.stringify(tableData));
+}
+
+// Function to toggle the visibility of a specific table column
+function toggleColumn(className) {
+  var columns = document.getElementsByClassName(className);
+
+  for (var i = 0; i < columns.length; i++) {
+    var column = columns[i];
+    column.style.display = column.style.display === "none" ? "table-cell" : "none";
+  }
+}
+
+// Function to toggle the visibility of the dropdown menu
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdown = document.getElementById("dropdown");
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+    }
+  }
+};
+
+function searchTable() {
+      const searchInput = document.querySelector('input[name="search"]');
+      const searchTitle = searchInput.value.trim().toLowerCase();
+
+      const table = document.getElementById("document-table");
+      const rows = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < rows.length; i++) {
+        const titleCell = rows[i].querySelector(".achievementin");
+        const title = titleCell.textContent.toLowerCase();
+
+        if (title.includes(searchTitle)) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
+      }
+    }
+
+    // Attach event listener to the search input
+    document.querySelector('input[name="search"]').addEventListener("input", searchTable);
+
+function openNewPage() {
+  window.open("file:///C:/Users/Jaideep/Desktop/html%20project/students/more/fee%20payments.html", "_self");
+}
+</script>
